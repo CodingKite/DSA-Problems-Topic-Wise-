@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class _1_binarySearch{
 
-  
+
   public static void main(String[] args) {
 
     Scanner scn = new Scanner(System.in);
