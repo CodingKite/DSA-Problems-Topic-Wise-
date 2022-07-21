@@ -5,7 +5,9 @@ public class _2_bubbleSort{
   public static void main(String[] args){
 
     _2_bubbleSort obj = new _2_bubbleSort();
-    int[] arr = obj.arrayCreation();
+    // int[] arr = obj.arrayCreation();
+    // int[] arr = {10,4,1,33,0,54,22,6,7};
+    int[] arr = {10,9,8,7,6,5,4,3,2,1};
 
     System.out.println("UN-Sorted array ==> "+ Arrays.toString(arr));
 
@@ -34,8 +36,9 @@ public class _2_bubbleSort{
   void bubbleSort(int[] arr){
 
     int temp; 
-    //outter loop
+    //outter loop - number of passses
     for(int j = 0; j <= arr.length-1; j++){
+      // inner loop - swapping elements in each pass
       for(int i=0; i <= arr.length-2; i++){ // no need to go to the sorted path
       // for(int i=0; i < arr.length-1-j; i++){
         // System.out.println(i);
@@ -53,9 +56,9 @@ public class _2_bubbleSort{
     int temp; 
     //outter loop
 
-    for(int j = 0; j <= arr.length-1; j++){
+    for(int j = 0; j <= arr.length-2; j++){
       int flag = 0;
-      for(int i=0; i < arr.length-1-j; i++){ // no need to go to the sorted path
+      for(int i=0; i <= arr.length-2-j; i++){ // no need to go to the sorted path
         if(arr[i]> arr[i+1]){
           temp = arr[i];
           arr[i] = arr[i+1];

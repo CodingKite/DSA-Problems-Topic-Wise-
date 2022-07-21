@@ -8,14 +8,16 @@ public class _1_selectionSort{
   public static void main(String[] args) {
     
     _1_selectionSort obj = new _1_selectionSort();
-    int[] arr = obj.arrayCreation();
+    int[] arr = {10,4,1,33,0,54,22,6,2};
+
+    // int[] arr = obj.arrayCreation();
 
     //various method
     
     // arr = obj.selection_Sort_Basic(arr);
     //since we passed the reference of arr, this function worked on the arr and sorted it.We need NOT assign it separately.
-    // obj.selection_Sort_Original(arr);
-    obj.selection_Sort_Original1(arr);
+    obj.selection_Sort_Original(arr);
+    // obj.selection_Sort_Original_1(arr);
 
     System.out.println("Sorted array ==> "+ Arrays.toString(arr));
 
@@ -60,13 +62,11 @@ public class _1_selectionSort{
   }
 
   void selection_Sort_Original(int[] arr){
-
-    for(int i = 0; i < arr.length-2; i++){
+    for(int i = 0; i <= arr.length-2; i++){
       int min_val = arr[i];
       int min_idx = i;
-
       //pass - iterating over all the further elements for finding and selecting the min_val & min_idx
-      for(int j = i+1; j < arr.length-1; j++){
+      for(int j = i+1; j <= arr.length-1; j++){
         if(arr[j] < min_val){
           min_val = arr[j];
           min_idx = j;
@@ -74,14 +74,14 @@ public class _1_selectionSort{
       }
       // System.out.println("Min_Val - "+ min_val+" min_idx - "+ min_idx);
 
-      // swap it
+      // swap the minimum element arr[min_idx] with current element arr[i]
       int temp = arr[min_idx];
       arr[min_idx] = arr[i];
       arr[i] = temp;
     }
   }
 
-  void selection_Sort_Original1(int[] arr){
+  void selection_Sort_Original_1(int[] arr){
 
     for(int i = 0; i < arr.length-2; i++){
       int min_idx = i;
